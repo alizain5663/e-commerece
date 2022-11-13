@@ -3,11 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { ManagementModuleRoutingModule } from './management-module-routing.module';
 import { ManagementModuleComponent } from './management-module.component';
+import { AdminRegisterComponent } from './management-components/admin-management/admin-register/admin-register.component';
+import { AdminLoginComponent } from './management-components/admin-management/admin-login/admin-login.component';
+import { UserLoginComponent } from './management-components/user-management/user-login/user-login.component';
+import { UserRegisterComponent } from './management-components/user-management/user-register/user-register.component';
+
 
 
 @NgModule({
   declarations: [
-    ManagementModuleComponent
+    ManagementModuleComponent,
+    AdminRegisterComponent,
+    AdminLoginComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+
   ],
   imports: [
     CommonModule,
