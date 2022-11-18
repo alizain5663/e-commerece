@@ -14,7 +14,7 @@
           
        <div class="col">
       
-         <div class="form-floating mb-3">
+         <div class="form-floating mb-3" (ngSubmit)="submitProductForm()" [formGroup]="myProductForm">
              <input type="text" class="form-control input" id="floatingInput" placeholder="Product Name" formControlName="productName">
              <label for="floatingInput">Product Name</label>
            </div>
@@ -43,8 +43,8 @@
            
             <label for="" class="tag">Select Size</label>
            <div class="mb-3">
-             <ng-container * >
-             <input type="checkbox" class="form-check-input" />
+            <ng-container *ngFor="let item of selectSize" >
+             <input type="checkbox" class="form-check-input" [name]="item" [value]="item" [id]="item" (click)="getSize($event)"/>
              <label class="form-check-label mx-2" >
                
              </label>
@@ -65,14 +65,14 @@
    
    <div class="mb-3">
      <label for="formFile" class="form-label tag">Select Images</label>
-     <input #FileSelect class="form-control input" type="file" id="formFile"   >
+     <input #FileSelect class="form-control input" type="file" id="formFile"  multiple (change)="getImages($event)" >
    </div>
    
      </div>
      <div class="col">
        <label for="" class="tag mb-2">Select Categories</label>
        <select class="form-select input" formControlName="category">
-         <option ></option>
+        <option *ngFor="let data of categories" [value]="data">{{data}}</option>
        </select>
      </div>
    </div>
