@@ -95,11 +95,11 @@ submitProductForm() {
 
 
 
-  // this.ProductService.CreateProductCard(MultiPartFormData).subscribe((ResponseComingFromBackend: any) => {
-  //   this.ToastrService.success(ResponseComingFromBackend.Message);
-  //   this.myProductForm.reset();
-  //   this.FileSelect.nativeElement.value = null;
-  // })
+  this.productService.CreateProductCard(MultiPartFormData).subscribe((res) => {
+    // this.ToastrService.success(ResponseComingFromBackend.Message);
+    this.myProductForm.reset();
+    this.FileSelect.nativeElement.value = null;
+  })
 }
 
 }
